@@ -1,5 +1,6 @@
 import React from 'react';
 import pokemons from '../data';
+import '../pokemon.css';
 
 class PokemonDetails extends React.Component {
   render () {
@@ -23,7 +24,9 @@ class PokemonDetails extends React.Component {
 				<h2>Sumary</h2>
 					<p>{summary}</p>
 					<h2>Found at location</h2>
-					{foundAt.map((mapInfo) => <div><p>{mapInfo.location}</p><img src={mapInfo.map} /></div>)}
+					<div className="map-details">
+						{foundAt.map((mapInfo) => <div className="map"><p>{mapInfo.location}</p><img src={mapInfo.map} /></div>)}
+					</div>
 			</div>
 
     )
