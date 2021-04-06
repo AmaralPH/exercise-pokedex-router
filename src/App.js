@@ -4,6 +4,7 @@ import pokemons from './data';
 import Pokedex from './components/Pokedex';
 import PokemonDetails from './components/PokemonDetails';
 import About from './components/About';
+import NotFound from './components/NotFound';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
         </ul>
       </nav>
       <Switch>
-        <Route path="/pokemons/:id" render={(props) => <PokemonDetails {...props} id={props.match.params.id} />} />
-        <Route path="/about" component={About} />
-        <Route path="/" render={() => <Pokedex pokemons={pokemons} />} />
+        <Route exact path="/pokemons/:id" render={(props) => <PokemonDetails {...props} id={props.match.params.id} />} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/" render={() => <Pokedex pokemons={pokemons} />} />
+        <Route path="/" component={NotFound} />
       </Switch>
       
     </BrowserRouter>
