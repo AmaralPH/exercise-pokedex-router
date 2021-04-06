@@ -1,3 +1,24 @@
 .App {
   text-align: center;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  margin: 10px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
